@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Asadullah | Generative AI Expert</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2b2d42;
+      --secondary: #8d99ae;
+      --accent: #ef233c;
+      --light: #edf2f4;
+      --dark: #1d1f2e;
+      --gradient: linear-gradient(135deg, #2b2d42, #4a4e69);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      background: var(--gradient);
+      color: white;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .logo span {
+      color: var(--accent);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 2rem;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent);
+      transition: var(--transition);
+    }
+    
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    
+    .hero {
+      background: var(--gradient);
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .hero h3 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .btn:hover {
+      background-color: #d90429;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent);
+      margin-left: 1rem;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--accent);
+    }
+    
+    section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    
+    .about-text p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .skills {
+      margin-top: 2rem;
+    }
+    
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    
+    .skill-bar {
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      background: var(--gradient);
+      border-radius: 5px;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-icon {
+      background: var(--gradient);
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: white;
+    }
+    
+    .service-content {
+      padding: 2rem;
+    }
+    
+    .service-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--secondary);
+      left: 50%;
+      margin-left: -2px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      width: 100%;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      padding-right: calc(50% + 30px);
+      text-align: right;
+    }
+    
+    .timeline-item:nth-child(even) {
+      padding-left: calc(50% + 30px);
+    }
+    
+    .timeline-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      top: 30px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: -50px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -50px;
+    }
+    
+    .timeline-content h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-content h4 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .project-img {
+      height: 200px;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .project-content p {
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+    
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .tech-tag {
+      background-color: var(--light);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-info {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-icon {
+      background: var(--gradient);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-details h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: var(--primary);
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(239, 35, 60, 0.2);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 50%;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    
+    .social-link:hover {
+      background: var(--accent);
+      transform: translateY(-5px);
+    }
+    
+    @media (max-width: 992px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .timeline::before {
+        left: 31px;
+      }
+      
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        padding: 0 0 0 70px;
+        text-align: left;
+      }
+      
+      .timeline-content::before {
+        left: -50px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      nav ul li {
+        margin: 0 1rem;
+      }
+      
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      
+      .hero h3 {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .hero {
+        padding: 3rem 0;
+      }
+      
+      .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .btn-outline {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <h1>M. <span>Asadullah</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h2>Muhammad Asadullah</h2>
+      <h3>Generative AI Expert & Data Scientist</h3>
+      <p>Building intelligent AI solutions that solve complex business problems and automate processes. Passionate about leveraging cutting-edge technologies to create innovative applications.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Professional Summary</h3>
+          <p>Dynamic and innovative professional with a strong technical background in Electrical Engineering and Data Science. Passionate about advancing technology through AI with extensive experience in developing AI applications, machine learning models, and automation solutions.</p>
+          <p>Specializing in Generative AI, Natural Language Processing (NLP), and large language models such as OpenAI's GPTs, Gemini, Claude, and open-source LLMs. Experienced with no/low-code tools including Make, n8n, GHL, Relevance AI, and Vapi.</p>
+          
+          <div class="personal-info">
+            <div class="info-item">
+              <p><strong>Email:</strong> asadigbal1247@gmail.com</p>
+              <p><strong>Phone:</strong> +92-320-4109120</p>
+              <p><strong>Location:</strong> Lahore, Pakistan</p>
+            </div>
+            <div class="info-item">
+              <p><strong>Nationality:</strong> Pakistani</p>
+              <p><strong>Languages:</strong> Urdu (Native), English (Fluent), Hindi, Punjabi</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skills">
+          <h3>Key Competencies</h3>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Generative AI Development</span>
+              <span>95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 95%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Python Programming</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Data Science & Analytics</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>NLP & LLM Integration</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>No-Code/Low-Code Automation</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="skills" style="background-color: #f0f2f5;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Technical Expertise</h2>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="service-content">
+            <h3>Generative AI</h3>
+            <p>Development of AI applications, chatbots, and agents using advanced NLP techniques and large language models (GPT, Gemini, Claude).</p>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="service-content">
+            <h3>Data Science</h3>
+            <p>Statistical data analysis, predictive modeling, and developing innovative data-driven solutions with Python and R.</p>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="service-content">
+            <h3>AI Automation</h3>
+            <p>Creating intelligent workflows with no-code/low-code tools like n8n, Make.com, Relevance AI, and Vapi.</p>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="service-content">
+            <h3>Conversational AI</h3>
+            <p>Building natural-sounding AI assistants for voice, chat, and customer support applications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-title">
+        <h2>Work Experience</h2>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Gen AI Engineer</h3>
+            <h4>INFINITLY, LLC, New York | Remote (January 2024 - Present)</h4>
+            <p>Specializing in Data Science, Machine Learning, and Gen AI Applications</p>
+            <ul>
+              <li>Led development of Generative AI Applications and chatbots using advanced NLP techniques</li>
+              <li>Implemented machine learning algorithms for predictive and descriptive modeling</li>
+              <li>Utilized Python (Langchain, LangGraph, Crewai, Flask) for building applications</li>
+              <li>Created multi-agent AI chatbot for document query</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Data Analyst & ML Engineer</h3>
+            <h4>Remote (2020 - Present)</h4>
+            <p>Applied Python and R for data analysis, machine learning, and web application development</p>
+            <ul>
+              <li>Developed Generative AI applications and RAG chatbots</li>
+              <li>Implemented automated workflows using N8N, Python, and LangChain</li>
+              <li>Handled large datasets and performed complex data analysis</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Solar System Design Engineer</h3>
+            <h4>SME PVT LTD, Lahore (2022 - 2023)</h4>
+            <p>Design and Installation of Solar Systems (Residential & Commercial)</p>
+            <ul>
+              <li>Developed design specifications for residential, commercial, and industrial solar energy systems</li>
+              <li>Designed a 1MW Solar System improving energy efficiency by 30%</li>
+              <li>Utilized Sketchup Pro and PVsyst for designing and shading analysis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" style="background-color: #f0f2f5;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Projects</h2>
+      </div>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fas fa-gavel"></i>
+          </div>
+          <div class="project-content">
+            <h3>AI Legal Advisor</h3>
+            <p>Application providing legal advice through document analysis using LangChain and GPT-4.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">GPT-4</span>
+              <span class="tech-tag">Pinecone</span>
+              <span class="tech-tag">TypeScript</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <div class="project-content">
+            <h3>Market Researcher AI</h3>
+            <p>AI tool that researches products and creates marketing campaigns and landing pages.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">n8n</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">GPT-4</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="project-content">
+            <h3>Personalized Cold Email Writer</h3>
+            <p>AI-driven tool that writes personalized marketing emails by researching lead information.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Web Scraping</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">LLMs</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="project-content">
+            <h3>Multi-Agent AI Chatbot</h3>
+            <p>Chatbot with document search, Google search, and Wikipedia search capabilities.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">CrewAI</span>
+              <span class="tech-tag">OpenAI</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="project-content">
+            <h3>AI Call Center Agents</h3>
+            <p>Vapi inbound/outbound call agents for lead qualification and customer support.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Vapi</span>
+              <span class="tech-tag">Twilio</span>
+              <span class="tech-tag">LLMs</span>
+              <span class="tech-tag">Databases</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fas fa-baseball-ball"></i>
+          </div>
+          <div class="project-content">
+            <h3>Baseball Pitcher's Strikeout Prediction</h3>
+            <p>ML model predicting pitcher strikeout probabilities using neural networks.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">Neural Networks</span>
+              <span class="tech-tag">Data Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Me</h2>
+      </div>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p>asadigbal1247@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <p>+92-320-4109120</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <p>Lahore, Punjab, Pakistan</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Languages</h4>
+              <p>Urdu (Native), English (Fluent), Hindi, Punjabi</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Your Name">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="Your Email">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" placeholder="Subject">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" placeholder="Your Message"></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <h3>Muhammad Asadullah</h3>
+        <p>Generative AI Expert | Data Scientist | Electrical Engineer</p>
+        
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/TechAsad" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <p>&copy; 2024 Muhammad Asadullah. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Form submission
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! I will get back to you soon.');
+        this.reset();
+      });
+    }
+    
+    // Animation on scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.service-card, .project-card, .timeline-content').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
