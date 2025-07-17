@@ -1015,6 +1015,69 @@
         
         <p>&copy; 2025 Muhammad Asadullah. All Rights Reserved.</p>
       </div>
+      <div style="position:fixed;bottom:100px;right:40px;z-index:9999;">
+  <div style="display:flex;gap:10px;">
+    <button id="showVoiceWidget" class="btn">Speak</button>
+    <button id="showChatWidget" class="btn">Chat</button>
+    
+  </div>
+</div>
+
+
+<!-- Voice Widget -->
+<div id="voiceWidgetContainer" style="display:block;">
+  <vapi-widget
+    public-key="bf90c87b-187c-4853-a6cc-88c4626a5cb8"
+    assistant-id="c4c694e3-66fc-4e91-b1f3-a919d62ceeab"
+    mode="voice"
+    theme="dark"
+    base-bg-color="#4a4e69"
+    accent-color="#ef233c"
+    cta-button-color="#000000"
+    cta-button-text-color="#ffffff"
+    border-radius="large"
+    size="full"
+    position="bottom-right"
+    title="Speak With My Assistant"
+    start-button-text="Start"
+    end-button-text="End Call"
+    chat-first-message="Hey, How can I help you today?"
+    chat-placeholder="Type your message..."
+    voice-show-transcript="true"
+    consent-required="true"
+    consent-title="Terms and conditions"
+    consent-content="By clicking 'Agree,' and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service."
+    consent-storage-key="vapi_widget_consent"
+  ></vapi-widget>
+</div>
+
+<!-- Chat Widget -->
+<div id="chatWidgetContainer" style="display:none;">
+  <vapi-widget
+    public-key="bf90c87b-187c-4853-a6cc-88c4626a5cb8"
+    assistant-id="c4c694e3-66fc-4e91-b1f3-a919d62ceeab"
+    mode="chat"
+    theme="dark"
+    base-bg-color="#4a4e69"
+    accent-color="#ef233c"
+    cta-button-color="#000000"
+    cta-button-text-color="#ffffff"
+    border-radius="large"
+    size="full"
+    position="bottom-right"
+    title="Chat With My Assistant"
+    start-button-text="Start"
+    end-button-text="End Call"
+    chat-first-message="Hey, How can I help you today?"
+    chat-placeholder="Type your message..."
+    voice-show-transcript="true"
+    consent-required="true"
+    consent-title="Terms and conditions"
+    consent-content="By clicking 'Agree,' and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service."
+    consent-storage-key="vapi_widget_consent"
+  ></vapi-widget>
+</div>
+
     </div>
   </footer>
 
@@ -1059,5 +1122,19 @@
       observer.observe(el);
     });
   </script>
+    <!-- Vapi Widget Embed -->
+<script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
+
+<script>
+  // Widget toggle logic
+  document.getElementById('showVoiceWidget').onclick = function() {
+    document.getElementById('voiceWidgetContainer').style.display = 'block';
+    document.getElementById('chatWidgetContainer').style.display = 'none';
+  };
+  document.getElementById('showChatWidget').onclick = function() {
+    document.getElementById('voiceWidgetContainer').style.display = 'none';
+    document.getElementById('chatWidgetContainer').style.display = 'block';
+  };
+</script>
 </body>
 </html>
